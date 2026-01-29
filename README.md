@@ -1,4 +1,5 @@
 # Nature Quotes by Oltion Shumolli
+ <img width="1080" height="1080" alt="favicon" src="https://github.com/user-attachments/assets/32a4cf56-6d32-4365-abbc-9c9a5fbb52c2" />
 
 **Nature Quotes** is a premium, modern, and fully responsive inspirational quotes website built with pure **HTML, CSS, and JavaScript**.  
 The project focuses on elegant design, smooth animations, multilingual support, and an immersive user experience inspired by nature and mindfulness.
