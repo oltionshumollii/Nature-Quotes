@@ -1,0 +1,254 @@
+/* =====================
+   RESET & VARIABLES
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --bg: #E7F5DC;
+    --card: #CFE1B9;
+    --text: #2f3e1f;
+    --accent: #728156;
+    --shadow: 0 20px 40px rgba(0,0,0,.12);
+  }
+  
+  [data-theme="dark"] {
+    --bg: #121212;
+    --card: #1f1f1f;
+    --text: #f2f2f2;
+    --accent: #98A77C;
+  }
+  
+  /* =====================
+     BASE
+  ===================== */
+  body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: .4s ease;
+  }
+  
+  /* =====================
+     HEADER
+  ===================== */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+  }
+  
+  .brand img {
+    height: 38px;
+  }
+  
+  nav {
+    display: flex;
+    gap: 26px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    transition: .3s;
+  }
+  
+  nav a:hover {
+    color: var(--accent);
+  }
+  
+  .actions {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .actions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text);
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
+  /* =====================
+     HERO
+  ===================== */
+  .hero {
+    text-align: center;
+    padding: 100px 20px 80px;
+  }
+  
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+  
+  .hero p {
+    margin-top: 12px;
+    opacity: .85;
+  }
+  
+  /* =====================
+     CATEGORIES
+  ===================== */
+  .categories {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+  }
+  
+  .card {
+    background: var(--card);
+    padding: 36px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    text-align: center;
+    transition: .4s ease;
+  }
+  
+  .card i {
+    font-size: 2.6rem;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  
+  .card:hover {
+    transform: translateY(-12px) scale(1.02);
+  }
+  
+  /* =====================
+     QUOTES
+  ===================== */
+  .quotes-page {
+    display: none;
+    padding: 60px;
+  }
+  
+  .back {
+    background: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+  
+  .quotes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+  }
+  
+  .quote {
+    background: var(--card);
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    animation: fadeUp .6s ease forwards;
+  }
+  
+  .quote i {
+    color: var(--accent);
+    margin-right: 6px;
+  }
+  
+  /* =====================
+     ABOUT
+  ===================== */
+  .about {
+    padding: 80px 18%;
+    text-align: center;
+  }
+  
+  .about h2 {
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    line-height: 1.7;
+    opacity: .9;
+    margin-bottom: 14px;
+  }
+  
+  /* =====================
+     FOOTER
+  ===================== */
+  .footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--card);
+  }
+  
+  .footer img {
+    height: 250px;
+    margin-bottom: 14px;
+  }
+  
+  .footer .quote {
+    background: none;
+    box-shadow: none;
+    font-style: italic;
+  }
+  
+  /* =====================
+     ANIMATIONS
+  ===================== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: .8s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* =====================
+     MOBILE
+  ===================== */
+  @media (max-width: 768px) {
+    nav {
+      position: fixed;
+      top: 70px;
+      right: -100%;
+      background: var(--card);
+      flex-direction: column;
+      width: 220px;
+      padding: 20px;
+      transition: .4s;
+    }
+  
+    nav.active { right: 0; }
+  
+    .hamburger { display: block; }
+  
+    .categories { padding: 30px; }
+    .about { padding: 60px 10%; }
+  }
+  
